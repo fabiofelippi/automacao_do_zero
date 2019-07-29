@@ -14,5 +14,5 @@ puts preco
 puts quantidade
 puts disponivel
 
-
+#timestamp 1:37:00
 
