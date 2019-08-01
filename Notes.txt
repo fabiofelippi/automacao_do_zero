@@ -1,2 +1,20 @@
 Certificações:
 - TMap NEXT Test Engineer (EXIN)
+
+VS Code
+- Coding
+  - Ruby Rubocop (instalar 'gem install rubocop')
+  - Ruby Language Colorization
+  - Snippets and Syntax Highlight for Gherkin (Cucumber)
+- Perfumaria
+  - One Dark Pro
+  - Material Icon Theme
+  
+  Ruby
+  Ruby Installer 2 - https://rubyinstaller.org/downloads/ (com DevKit, mínimo do Ruby 2.4 por conta do Capybara)
+    - Durante a instalação, deixar a marcação do MSYS2, mas desmarcar a instalação ao fim do processo
+    - No CMDER, executar 'ridk install' e selecionar a opção 3 (MSYS2 e MINGW development toolchain)
+    - gem install bundler
+    
+    
+  
