@@ -42,3 +42,10 @@ achou_bug(1)
 achou_bug(2)
 puts resultado.class
 achou_bug(resultado)
+
+def retorna_nome
+    'Fernando'
+end
+
+resultado = retorna_nome
+puts resultado
