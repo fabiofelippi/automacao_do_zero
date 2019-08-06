@@ -13,7 +13,7 @@
 
 def soma(n1, n2)
     n1 + n2
-rescue Exception => e
+rescue StandardError => e   # Foi usado StandardError em vez de Exception apresetnado no curso
     puts e.message
     puts 'Erro ao executar a soma.'
 end
