@@ -27,7 +27,7 @@ Ruby
     Iniciar o RSpec com 'rspec --inti' no terminal da pasta (cria a pasta spec com o modelo 'spec_helper.rb').
     OBS: Todos os arquivos de spec devem terminar com '_spec.rb' (exemplo_spec.rb)
     
-Validadore e Matchers
+Validadores e Matchers
 
     Guia de referência para os matchers
 
