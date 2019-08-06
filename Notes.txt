@@ -123,5 +123,7 @@ Validadores e Matchers
         expect(string).to end_with("ninja")
         expect(string).not_to end_with("qa")
 
-
+Report Formats
+    rspec --format html --out report.html                   # Para html
+    rspec --format RspecJunitFormatter --out report.xml     # Para XML para Jenkis, CI, etc
   
