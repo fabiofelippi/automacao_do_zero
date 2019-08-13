@@ -1,11 +1,31 @@
+# frozen_string_literal: true
+
 describe 'Forms' do
+  it 'login com sucesso' do
+    visit 'https://training-wheels-protocol.herokuapp.com/login'
+    fill_in 'userId', with: 'stark'
+    fill_in 'password', with: 'jarvis!'
+    click_button 'Login'
+    expect(find('#flash').visible?).to be true
+    expect(find('#flash').text).to include 'Olá, Tony Stark. Você acessou a área logada!'
+    expect(find('#flash')).to have_content 'Olá, Tony Stark. Você acessou a área logada!'
+  end
 
-    it 'login com sucesso' do
-        visit 'https://training-wheels-protocol.herokuapp.com/login'
-        fill_in 'userId', with: 'stark'
-        fill_in 'password', with: 'jarvis!'
-        click_button 'Login'
-        expect(find('#flash').visible?).to be true
-    end
+  it 'senha incorreta' do
+    visit 'https://training-wheels-protocol.herokuapp.com/login'
+    fill_in 'userId', with: 'stark'
+    fill_in 'password', with: 'jarvis'
+    click_button 'Login'
+    expect(find('#flash').visible?).to be true
+    expect(find('#flash').text).to include 'Senha é invalida!'
+  end
 
+  it 'usuário não cadastrado' do
+    visit 'https://training-wheels-protocol.herokuapp.com/login'
+    fill_in 'userId', with: 'sdfsfsdfsdfs'
+    fill_in 'password', with: 'sdfsdfsdfsdfs'
+    click_button 'Login'
+    expect(find('#flash').visible?).to be true
+    expect(find('#flash').text).to include 'O usuário informado não está cadastrado!'
+  end
 end
