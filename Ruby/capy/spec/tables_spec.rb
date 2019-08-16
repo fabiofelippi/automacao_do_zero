@@ -19,7 +19,7 @@ describe 'Tables', :tables do
   it 'deve exibir o filme Velozes' do
     diesel = find('table tbody tr', text: '@vindiesel')
     movie = diesel.all('td')[2].text
-    expect(movie).to eql 'Velozes e Furiosos'
+    expect(movie).to eql 'Fast & Furious'
   end
 
   it 'deve exibir o Insta do Chris Evans' do
@@ -40,5 +40,10 @@ describe 'Tables', :tables do
     pratt.find('a', text: 'edit').click
     msg = page.driver.browser.switch_to.alert.text
     expect(msg).to eql 'Chris Pratt foi selecionado para edição!'
+  end
+
+  after(:each) do |e|
+    nome = e.description.gsub(/[^A-Za-z0-9 ]/, '').tr(' ', '_')
+    page.save_screenshot('log/' + nome + '.png') if e.exception # short if para casos de exceção apenas
   end
 end
