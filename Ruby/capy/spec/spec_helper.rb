@@ -20,7 +20,6 @@ RSpec.configure do |config|
   config.before(:example) do
     page.current_window.resize_to(1280, 800)
   end
-  
 end
 
 Capybara.configure do |config|

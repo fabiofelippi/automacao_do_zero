@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
 describe 'Login2', :login2 do
-  
   before(:each) do
-    visit 'https://training-wheels-protocol.herokuapp.com/login2'
+    visit '/login2'
   end
 
   it 'com data de nascimento' do
