@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe 'Forms' do
+describe 'Forms', :login_form do
   it 'login com sucesso' do
     visit '/login'
     fill_in 'userId', with: 'stark'
@@ -27,5 +27,10 @@ describe 'Forms' do
     click_button 'Login'
     expect(find('#flash').visible?).to be true
     expect(find('#flash').text).to include 'O usuário informado não está cadastrado!'
+  end
+
+  after(:each) do |e|
+    nome = e.description.gsub(/[^A-Za-z0-9 ]/, '').tr(' ', '_')
+    page.save_screenshot('log/' + nome + '.png')
   end
 end
