@@ -15,14 +15,11 @@ Quando('eu adiciono {int} unidade\\(s)') do |quantidade|
 end
 
 Então('deve ser adicionado {int} unidade\\(s) deste item') do |quantidade|
-  cart = find('#cart')
-  expect(cart).to have_text "(#{quantidade}x) #{@produto_nome}"
+  expect(@cart_page.box).to have_text "(#{quantidade}x) #{@produto_nome}"
 end
 
 Então('o valor total deve ser de {string}') do |valor_total|
-  cart = find('#cart')
-  total = cart.find('tr', text: 'Total:').find('td')
-  expect(total.text).to eql valor_total
+  expect(@cart_page.total.text).to eql valor_total
 end
 
 # lista de produtos
@@ -40,9 +37,8 @@ Quando('eu adiciono todos os itens') do
 end
 
 Então('vejo todos os itens do carrinho') do
-  cart = find('#cart')
   @product_list.each do |p|
-    expect(cart).to have_text "(#{p['quantidade']}x) #{p['nome']}"
+    expect(@cart_page.box).to have_text "(#{p['quantidade']}x) #{p['nome']}"
   end
 end
 
@@ -55,26 +51,18 @@ Dado('que eu tenho os seguintes itens no carrinho:') do |table|
   )
 end
 
-Quando('eu removo somente o item {int}') do |item|
-  cart = find('#cart')
-  cart.all('table tbody tr')[item].find('.danger').click
-end
-
 Quando('eu removo somente o {int}') do |item|
-  cart = find('#cart')
-  cart.all('table tbody tr')[item].find('.danger').click
+  @cart_page.remove_item(item)
 end
 
 Quando('eu removo todos os itens') do
-  @product_list.each_with_index do |_value, idx|
-    cart = find('#cart')
-    cart.all('table tbody tr')[idx].find('.danger').click
+  @product_list.each_with_index do |value, idx|
+    @cart_page.remove_item(idx)
   end
 end
 
 Então('vejo a seguinte mensagem no carrinho {string}') do |mensagem|
-  cart = find('#cart')
-  expect(cart).to have_text mensagem
+  expect(@cart_page.box).to have_text mensagem
 end
 
 Quando('eu limpo o meu carrinho') do
