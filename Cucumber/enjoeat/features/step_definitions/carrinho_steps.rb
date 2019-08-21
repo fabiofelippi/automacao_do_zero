@@ -56,7 +56,7 @@ Quando('eu removo somente o {int}') do |item|
 end
 
 Quando('eu removo todos os itens') do
-  @product_list.each_with_index do |value, idx|
+  @product_list.each_with_index do |_value, idx|
     @rest_page.cart.remove_item(idx)
   end
 end

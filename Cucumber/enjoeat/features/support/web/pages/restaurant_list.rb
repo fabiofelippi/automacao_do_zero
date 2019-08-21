@@ -1,16 +1,17 @@
+# frozen_string_literal: true
+
 class RestaurantListPage
-    include Capybara::DSL
+  include Capybara::DSL
 
-    def load
-        visit '/restaurants'
-    end
+  def load
+    visit '/restaurants'
+  end
 
-    def go(restaurant)
-        find('.restaurant-item', text: restaurant.upcase).click
-    end
+  def go(restaurant)
+    find('.restaurant-item', text: restaurant.upcase).click
+  end
 
-    def list
-        all('.restaurant-item')
-    end
-    
+  def list
+    all('.restaurant-item')
+  end
 end

@@ -10,7 +10,7 @@ end
 
 Então('devo ver todos os restaurantes desta lista') do
   restaurants = @rest_list_page.list
-  
+
   @restaurant_data.each_with_index do |value, index|
     expect(restaurants[index]).to have_text value['nome'].upcase
     expect(restaurants[index]).to have_text value['categoria']
