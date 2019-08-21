@@ -45,7 +45,7 @@
       "name": "Ice Cream",
       "category": "Sorvetes",
       "deliveryEstimate": "1 hora",
-      "rating": 0.0,
+      "rating": 0,
       "imagePath": "assets/img/restaurants/icy.png",
       "about": "A Ice Cream é uma sorveteria inovadora.",
       "hours": "Funciona todos os dias, de 10h às 1h"
@@ -370,5 +370,162 @@
       "restaurantId": "tasty-treats"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "name": "Fabio",
+      "email": "fabio@eu.com",
+      "emailConfirmation": "fabio@eu.com",
+      "address": "Avenida Paulista",
+      "number": "1000",
+      "optionalAddress": "17o andar",
+      "paymentOption": "REF",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "detox"
+        },
+        {
+          "quantity": 2,
+          "menuId": "quinoa"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "name": "dfgfdsgsdg",
+      "email": "dsfgsdfg@gsdef.com",
+      "emailConfirmation": "dsfgsdfg@gsdef.com",
+      "address": "dsfgsdfg",
+      "number": "2342",
+      "optionalAddress": "",
+      "paymentOption": "REF",
+      "orderItems": [
+        {
+          "quantity": 2,
+          "menuId": "cake"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "name": "Fabio",
+      "email": "fabio@eu.com",
+      "emailConfirmation": "fabio@eu.com",
+      "address": "Avenida Paulista",
+      "number": "1000",
+      "optionalAddress": "17o andar",
+      "paymentOption": "REF",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "detox"
+        },
+        {
+          "quantity": 2,
+          "menuId": "quinoa"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "name": "Fabio",
+      "email": "fabio@eu.com",
+      "emailConfirmation": "fabio@eu.com",
+      "address": "Avenida Paulista",
+      "number": "1000",
+      "optionalAddress": "17o andar",
+      "paymentOption": "REF",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "detox"
+        },
+        {
+          "quantity": 2,
+          "menuId": "quinoa"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "name": "Fabio",
+      "email": "fabio@eu.com",
+      "emailConfirmation": "fabio@eu.com",
+      "address": "Avenida Paulista",
+      "number": "1000",
+      "optionalAddress": "17o andar",
+      "paymentOption": "REF",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "detox"
+        },
+        {
+          "quantity": 2,
+          "menuId": "quinoa"
+        }
+      ],
+      "id": 5
+    },
+    {
+      "name": "Fabio",
+      "email": "fabio@eu.com",
+      "emailConfirmation": "fabio@eu.com",
+      "address": "Avenida Paulista",
+      "number": "1000",
+      "optionalAddress": "17o andar",
+      "paymentOption": "REF",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "detox"
+        },
+        {
+          "quantity": 2,
+          "menuId": "quinoa"
+        }
+      ],
+      "id": 6
+    },
+    {
+      "name": "Fabio",
+      "email": "fabio@eu.com",
+      "emailConfirmation": "fabio@eu.com",
+      "address": "Avenida Paulista",
+      "number": "1000",
+      "optionalAddress": "17o andar",
+      "paymentOption": "REF",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "detox"
+        },
+        {
+          "quantity": 2,
+          "menuId": "quinoa"
+        }
+      ],
+      "id": 7
+    },
+    {
+      "name": "Fabio",
+      "email": "fabio@eu.com",
+      "emailConfirmation": "fabio@eu.com",
+      "address": "Avenida Paulista",
+      "number": "1000",
+      "optionalAddress": "17o andar",
+      "paymentOption": "REF",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "detox"
+        },
+        {
+          "quantity": 2,
+          "menuId": "quinoa"
+        }
+      ],
+      "id": 8
+    }
+  ]
 }
