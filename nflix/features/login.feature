@@ -5,13 +5,13 @@ Funcionalidade: Login
     Sendo um usuário previamente cadastrado
     Posso acessar o sistema com o meu email e senha
 
-    @happy
+    @login_happy
     Cenário: Acesso
         Quando eu faço login com "tony@stark.com" e "pwd123"
         Então devo ser autenticado
         E devo ver "Tony Stark" na área logada
 
-    @login
+    @login_unhappy
     Esquema do Cenario: Login sem sucesso
         Quando eu faço login com <email> e <senha>
         Então não devo ser autenticado

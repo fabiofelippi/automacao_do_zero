@@ -21,24 +21,30 @@ Funcionalidade: Cadastro de filmes
             | "spider"   |
             | "joker"   |
 
-    Cenario: Sem nome
-        Quando eu tento cadastrar um filme sem o nome
-        Então devo ver a notificação "Oops - Filme sem titulo. Pode isso Arnaldo?"
+    @attempt_movie
+    Esquema do Cenario: Campos obrigatórios
+        O gestor de catálogo tenta cadastrar um novo filme mas esquece
+        de preencher um dos campos que são obrigatórios, em seguida, o sistema
+        exibe uma notificação para o usuário.
 
-    Cenario: Sem status
-        Quando eu tento cadastrar um filme sem o status
-        Então devo ver a notificação "Oops - O status deve ser informado!"
-    
-    Cenario: Ano de lançamento não informado
-        Quando eu tento cadastrar um filme sem ano de lançamento
-        Então devo ver a notificação "Oops - Faltou o ano de lançamento também!"
-    
-    Cenario: Data de estréia não informada
-        Quando eu tento cadastrar um filme sem a data de estréia
-        Então devo ver a notificação "Oops - Quase lá, só falta a data de estréia!"
+        Dado que <codigo> é um novo filme
+        Quando eu faço o cadastro deste filme
+        Então devo ver a notificação <texto>
+        Exemplos:
+            | codigo      | texto                                          |
+            | "no_title"  | "Oops - Filme sem titulo. Pode isso Arnaldo?"  |
+            | "no_status" | "Oops - O status deve ser informado!"          |
+            | "no_year"   | "Oops - Faltou o ano de lançamento também!"    |
+            | "no_date"   | "Oops - Quase lá, só falta a data de estréia!" |      
 
+    @dup_movie
     Cenario: Duplicado
-        Dado que "Deadpool 2" já foi cadastrado
+        O gestor de catálogo tenta cadastrar o filme, porem o título
+        já foi cadastrado em outro momento e o sistema notifica o usuario
+        informando que o título já existe.
+
+        Dado que "deadpool2" é um novo filme
+        Mas este filme já existe no catálogo
         Quando eu faço o cadastro deste filme
         Então devo ver a notificação "Oops - Este titulo já existe no Ninjaflix."
 
